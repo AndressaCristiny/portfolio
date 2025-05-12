@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
 
 // next.config.js
 module.exports = {
+  output: "export",
   images: {
     domains: ["s3-us-west-2.amazonaws.com", "media.licdn.com"],
   },
