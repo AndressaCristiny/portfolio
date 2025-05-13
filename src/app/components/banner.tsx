@@ -26,7 +26,7 @@ export default function Banner() {
               data-nimg="1"
               className="absolute bottom-full right-full -mb-56 -mr-72"
               style={{ color: "transparent" }}
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/blur-indigo.png`}
+              src={`portfolio/blur-indigo.png`}
             />
             <div className="relative">
               <div className="inline-block min-h-[3rem]">
@@ -69,7 +69,7 @@ export default function Banner() {
             data-nimg="1"
             className="absolute -right-64 -top-64"
             style={{ color: "transparent" }}
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/blur-cyan.png`}
+            src={`portfolio/blur-cyan.png`}
           />
 
           <Image
@@ -80,7 +80,7 @@ export default function Banner() {
             data-nimg="1"
             className="absolute -bottom-1 -right-44"
             style={{ color: "transparent" }}
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/blur-indigo.png`}
+            src={`portfolio/blur-indigo.png`}
           />
 
           <div className="relative lg:static xl:pl-10">
