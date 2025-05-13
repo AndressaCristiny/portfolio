@@ -5,6 +5,7 @@ const nextConfig = {
   output: "export",
   basePath: "/portfolio",
   assetPrefix: isProd ? "/portfolio/" : "",
+  trailingSlash: true,
   images: {
     unoptimized: true,
     domains: ["s3-us-west-2.amazonaws.com", "media.licdn.com"],
