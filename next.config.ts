@@ -1,3 +1,4 @@
+// next.config.js ou next.config.ts
 const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig = {
@@ -5,7 +6,10 @@ const nextConfig = {
   basePath: "/portfolio",
   assetPrefix: isProd ? "/portfolio/" : "",
   trailingSlash: true,
-  images: { unoptimized: true },
+  images: {
+    unoptimized: true,
+    domains: ["s3-us-west-2.amazonaws.com", "media.licdn.com"],
+  },
 };
 
 export default nextConfig;
