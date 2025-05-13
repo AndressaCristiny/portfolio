@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export"
+    "export": "next export",
+    "deploy": "rm -rf .next out && npm run build && git checkout gh-pages && git rm -rf . && cp -r ../portfolio/out/* ."
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

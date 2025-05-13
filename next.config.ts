@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   basePath: "/portfolio",
   assetPrefix: "/portfolio",
   images: {
+    unoptimized: true,
     domains: ["s3-us-west-2.amazonaws.com", "media.licdn.com"],
   },
 };
