@@ -14,7 +14,7 @@ export default function Contact() {
       >
         <Image
           alt=""
-          src="/footer.avif"
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/footer.avif`}
           className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
           width={1824}
           height={1080}

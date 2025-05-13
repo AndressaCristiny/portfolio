@@ -44,7 +44,9 @@ export default function ProjectsCarousel() {
               <Card className="overflow-hidden rounded-2xl border border-gray-900 bg-gray-950 shadow-lg shadow-blue-500/10 transition-transform duration-300 hover:scale-[1.02]">
                 <div className="relative w-full h-40">
                   <Image
-                    src={slide.cover}
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/${
+                      slide.cover
+                    }`}
                     alt="Cover"
                     fill
                     className="object-cover"
