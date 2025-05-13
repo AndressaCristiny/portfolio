@@ -29,8 +29,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="stylesheet" href="_next/static/css/63c6a282b280c367.css" />
-        <link rel="stylesheet" href="_next/static/css/70f0ca5b7408347b.css" />
+        <link rel="stylesheet" href="/_next/static/css/63c6a282b280c367.css" />
+        <link rel="stylesheet" href="/_next/static/css/70f0ca5b7408347b.css" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
