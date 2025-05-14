@@ -1,9 +1,15 @@
 import Image from "next/image";
 
-export default function CardStacks() {
+interface CardStacksProps {
+  className?: string;
+}
+
+export default function CardStacks({ className = "" }: CardStacksProps) {
   return (
-    <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
-      <div className="relative isolate overflow-hidden bg-gray-950 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+    <div
+      className={`mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8 ${className}`}
+    >
+      <div className="relative isolate overflow-hidden bg-gray-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
         <svg
           viewBox="0 0 1024 1024"
           aria-hidden="true"
@@ -47,7 +53,7 @@ export default function CardStacks() {
         <div className="relative mt-16 h-80 lg:mt-8">
           <Image
             alt="App screenshot"
-            src={`/portfolio/stacks_1.png`}
+            src={`${process.env.NEXT_PUBLIC_IMAGE_PATH}/stacks_1.png`}
             width={1824}
             height={1080}
             className="absolute top-0 left-0 w-[52rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"

@@ -16,6 +16,14 @@ export const carouselData = [
     link: "https://github.com/AndressaCristiny/rede-social-simples",
   },
   {
+    name: "Portfolio",
+    role: "REACT.JS | NEXT.JS | TYPESCRIPT",
+    description:
+      "Este projeto portfolio foi desenvolvido para apresentar minhas principais habilidades e projetos. Ele oferece uma visão clara do meu trabalho, refletindo minha capacidade de criar soluções eficientes e inovadoras, sempre com foco na qualidade e usabilidade.",
+    cover: "/banner_1.jpg",
+    link: "https://github.com/AndressaCristiny/portfolio",
+  },
+  {
     name: "TCC - Projeto Jade",
     role: "PHP | JAVASCRIPT | HTML | CSS | SQL",
     description:

@@ -10,7 +10,7 @@ export default function Banner() {
   return (
     // <div className="overflow-hidden bg-slate-900 dark:-mb-32 dark:mt-[-4.75rem] dark:pb-32 dark:pt-[4.75rem]">
     <div
-      className="overflow-hidden dark:-mb-32 dark:mt-[-4.75rem] dark:pb-32 dark:pt-[4.75rem] "
+      className="relative overflow-hidden dark:-mb-32 dark:mt-[-4.75rem] dark:pb-32 dark:pt-[4.75rem]"
       style={{
         background: `linear-gradient(to bottom, rgba(0,4,12,0.70), rgba(0,4,12,0.65))`,
       }}
@@ -26,7 +26,7 @@ export default function Banner() {
               data-nimg="1"
               className="absolute bottom-full right-full -mb-56 -mr-72"
               style={{ color: "transparent" }}
-              src={`/portfolio/blur-indigo.png`}
+              src={`${process.env.NEXT_PUBLIC_IMAGE_PATH}/blur-indigo.png`}
             />
             <div className="relative">
               <div className="inline-block min-h-[3rem]">
@@ -69,7 +69,7 @@ export default function Banner() {
             data-nimg="1"
             className="absolute -right-64 -top-64"
             style={{ color: "transparent" }}
-            src={`/portfolio/blur-cyan.png`}
+            src={`${process.env.NEXT_PUBLIC_IMAGE_PATH}/blur-cyan.png`}
           />
 
           <Image
@@ -78,9 +78,9 @@ export default function Banner() {
             height="567"
             decoding="async"
             data-nimg="1"
-            className="absolute -bottom-1 -right-44"
+            className="absolute -bottom-1 -right-44 hidden sm:block"
             style={{ color: "transparent" }}
-            src={`/portfolio/blur-indigo.png`}
+            src={`${process.env.NEXT_PUBLIC_IMAGE_PATH}/blur-indigo.png`}
           />
 
           <div className="relative lg:static xl:pl-10">

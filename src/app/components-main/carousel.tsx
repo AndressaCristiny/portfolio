@@ -32,59 +32,62 @@ export default function ProjectsCarousel() {
         </p>
       </div>
 
-      <Carousel
-        /*plugins={[plugin.current]}*/ className="w-full md:w-3/4 mx-auto"
-      >
-        <CarouselContent>
-          {carouselData.map((slide, index) => (
-            <CarouselItem
-              key={index}
-              className="px-4 md:basis-1/2 lg:basis-1/3 p-5"
-            >
-              <Card className="overflow-hidden rounded-2xl border border-gray-900 bg-gray-950 shadow-lg shadow-blue-500/10 transition-transform duration-300 hover:scale-[1.02]">
-                <div className="relative w-full h-40">
-                  <Image
-                    src={`/portfolio${slide.cover}`}
-                    alt="Cover"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+      <div className="overflow-x-auto sm:overflow-x-hidden">
+        <Carousel
+          /*plugins={[plugin.current]}*/
+          className="w-full sm:w-3/4 mx-auto"
+        >
+          <CarouselContent>
+            {carouselData.map((slide, index) => (
+              <CarouselItem
+                key={index}
+                className="mx-2 md:basis-1/2 lg:basis-1/3 p-5"
+              >
+                <Card className="overflow-hidden rounded-2xl border border-gray-900 bg-gray-900 shadow-lg shadow-blue-500/10 transition-transform duration-300 hover:scale-[1.02]">
+                  <div className="relative w-full h-40">
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_IMAGE_PATH}${slide.cover}`}
+                      alt="Cover"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
 
-                <CardContent className="p-6 space-y-4">
-                  <div className="flex items-center gap-4">
-                    {/* <Image
-                  src={slide.avatar}
+                  <CardContent className="p-6 space-y-4">
+                    <div className="flex items-center gap-4">
+                      {/* <Image
+                  src={`${process.env.NEXT_PUBLIC_IMAGE_PATH}${slide.avatar}`}
                   alt="Avatar"
                   width={40}
                   height={40}
                   className="rounded-full border border-white/10"
                 /> */}
-                    <div>
-                      <h2 className="text-lg font-semibold text-white">
-                        {slide.name}
-                      </h2>
-                      <p className="text-sm text-slate-300">{slide.role}</p>
+                      <div>
+                        <h2 className="text-lg font-semibold text-white">
+                          {slide.name}
+                        </h2>
+                        <p className="text-sm text-slate-300">{slide.role}</p>
+                      </div>
                     </div>
-                  </div>
 
-                  <p className="text-sm text-gray-200 leading-snug">
-                    {slide.description}
-                  </p>
+                    <p className="text-sm text-gray-200 leading-snug">
+                      {slide.description}
+                    </p>
 
-                  <div className="pt-2">
-                    <a href={slide.link} target="_blank">
-                      <ExternalLink className="w-5 h-5 text-green-600 cursor-pointer" />
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious className="bg-zinc-800/60 text-white hover:text-white/50 hover:bg-zinc-700 border border-white/10 shadow-lg backdrop-blur-sm transition-colors duration-200" />
-        <CarouselNext className="bg-zinc-800/60 text-white hover:text-white/50 hover:bg-zinc-700 border border-white/10 shadow-lg backdrop-blur-sm transition-colors duration-200" />
-      </Carousel>
+                    <div className="pt-2">
+                      <a href={slide.link} target="_blank">
+                        <ExternalLink className="w-5 h-5 text-green-600 cursor-pointer" />
+                      </a>
+                    </div>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="bg-zinc-800/60 text-white hover:text-white/50 hover:bg-zinc-700 border border-white/10 shadow-lg backdrop-blur-sm transition-colors duration-200" />
+          <CarouselNext className="bg-zinc-800/60 text-white hover:text-white/50 hover:bg-zinc-700 border border-white/10 shadow-lg backdrop-blur-sm transition-colors duration-200" />
+        </Carousel>
+      </div>
     </>
   );
 }

@@ -4,10 +4,10 @@ export default function AboutMe() {
   return (
     <section
       id="sobre"
-      className="relative isolate overflow-hidden bg-black px-6 py-24 sm:py-32 lg:px-8 mb-32"
+      className="relative isolate overflow-hidden bg-black px-6 py-24 sm:py-32 lg:px-8 mb-80"
     >
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,#1e1b4b,#0a0a0a)] opacity-20" />
-      <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-[#0a0a0a] shadow-xl ring-1 shadow-indigo-900/20 ring-indigo-950 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,#2C3E50,#1A2634)] opacity-20" />
+      <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-[linear-gradient(135deg,#2C3E50,#1A2634)] shadow-xl ring-1 shadow-indigo-700/10 ring-indigo-900 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
 
       <div className="mx-auto max-w-2xl lg:max-w-4xl">
         {/* <img

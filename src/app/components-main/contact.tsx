@@ -1,10 +1,61 @@
-import {
-  EnvelopeIcon,
-  // PhoneIcon
-} from "@heroicons/react/24/outline";
+import { useState } from "react";
+import { FormEvent } from "react";
+import { EnvelopeIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
 export default function Contact() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [isMessageVisible, setIsMessageVisible] = useState(true); // Controla a visibilidade da mensagem
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Previne o comportamento padrão do formulário
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    // Validação da mensagem para não ser vazia
+    let message = formData.get("message");
+    if (message !== null && typeof message === "string") {
+      message = message.trim(); // Remove espaços em branco
+    }
+
+    if (!message) {
+      setIsError(true);
+      setIsSubmitted(false);
+      return; // Se a mensagem for vazia, interrompe o envio
+    }
+
+    try {
+      const res = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+      });
+
+      if (res.ok) {
+        setIsSubmitted(true);
+        setIsError(false);
+        form.reset(); // Reseta o formulário após o envio bem-sucedido
+
+        // Esconde a mensagem após 3 segundos
+        setTimeout(() => {
+          setIsMessageVisible(false);
+        }, 3000);
+      } else {
+        throw new Error("Erro ao enviar mensagem");
+      }
+    } catch (error) {
+      console.error("Erro ao enviar mensagem:", error);
+      setIsError(true);
+      setIsSubmitted(false);
+
+      // Esconde a mensagem de erro após 3 segundos
+      setTimeout(() => {
+        setIsMessageVisible(false);
+      }, 3000);
+    }
+  };
+
   return (
     <>
       {/* Hero CTA */}
@@ -14,7 +65,7 @@ export default function Contact() {
       >
         <Image
           alt=""
-          src="/portfolio/footer.avif"
+          src={`${process.env.NEXT_PUBLIC_IMAGE_PATH}/footer.avif`}
           className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
           width={1824}
           height={1080}
@@ -85,6 +136,7 @@ export default function Contact() {
                 action="https://formsubmit.co/andressasilva04178@gmail.com"
                 method="POST"
                 className="flex flex-col gap-3"
+                onSubmit={handleSubmit}
               >
                 <input type="hidden" name="_captcha" value="false" />
                 <div className="flex flex-col sm:flex-row gap-3">
@@ -117,6 +169,18 @@ export default function Contact() {
                   Enviar mensagem
                 </button>
               </form>
+
+              {/* Mensagem de sucesso ou erro */}
+              {isMessageVisible && isSubmitted && (
+                <div className="mt-4 text-green-500 opacity-100 transition-opacity duration-300 ease-in-out">
+                  <p>Mensagem enviada com sucesso!</p>
+                </div>
+              )}
+              {isMessageVisible && isError && (
+                <div className="mt-4 text-red-500 opacity-100 transition-opacity duration-300 ease-in-out">
+                  <p>Erro ao enviar a mensagem. Por favor, tente novamente.</p>
+                </div>
+              )}
             </div>
           </div>
         </div>

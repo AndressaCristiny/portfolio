@@ -16,7 +16,7 @@ export default function Home() {
 
       <Stacks />
 
-      <CardStatcks />
+      <CardStatcks className="mb-40" />
 
       <AboutMe />
 
