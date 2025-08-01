@@ -18,16 +18,24 @@ export default function AboutMe() {
         <figure className="mt-10">
           <blockquote className="text-center text-lg font-semibold text-gray-200 sm:text-xl">
             <p>
-              “Estou em constante evolução profissional, movida pela curiosidade
+              {/* “Estou em constante evolução profissional, movida pela curiosidade
               e pela vontade de aprender todos os dias. Acredito que a
               curiosidade é essencial para o crescimento na área de tecnologia e
-              um dos principais motores da inovação.”
+              um dos principais motores da inovação.” */}
+              “Sou desenvolvedora full-stack com foco em construir soluções do
+              zero que realmente entregam valor. Tenho experiência prática em
+              projetos complexos, sempre priorizando performance, escalabilidade
+              e clareza nos processos. Meu diferencial está na capacidade de
+              transformar desafios técnicos em sistemas robustos, bem
+              documentados e prontos para crescer junto com o negócio. Tenho
+              visão de produto, pensamento crítico e gosto de atuar em ambientes
+              onde inovação e eficiência andam juntas.”
             </p>
           </blockquote>
           <figcaption className="mt-10">
             <Image
               alt=""
-              src="https://media.licdn.com/dms/image/v2/D4D03AQFRHQICewnQiA/profile-displayphoto-shrink_800_800/B4DZXZ28yMHYAk-/0/1743116817217?e=1752105600&v=beta&t=AidIJP4XwqOiN4cFzFeKTGrGq8kTjW2ayBD0GRp8nEc"
+              src="https://avatars.githubusercontent.com/u/92947091?s=400&u=758e1f8dff8073b7446efd1f9907f69dfd5c661a&v=4"
               className="mx-auto size-20 rounded-full"
               width={1824}
               height={1080}
